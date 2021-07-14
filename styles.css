@@ -101,6 +101,10 @@ body {
   background-size: 20px 40px;
 }
 
+.anim {
+  animation:block 2s infinite linear;
+}
+
 @keyframes block {
   0% {left: 580px;}
   100% {left:0px}

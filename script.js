@@ -34,7 +34,6 @@ recognition.addEventListener('end', () => {
 //Dino game part! The voice recognition is setup and but the game isn't there yet.
 const dino = document.getElementById("dino")
 const cactus = document.getElementById("cactus")
-let cssFile = window.document.styleSheets[1]
 const closeModal = document.getElementById("close-button")
 const overlay = document.getElementById("overlay")
 const modal = document.getElementById("modal")
@@ -51,8 +50,8 @@ function jump() {
 
 function startGame() {
   document.getElementById("highScore").innerHTML = "Highscore: " + localStorage.highScore
-  /* when the button is clicked, starts the game by inserting the only infinite animation into css stylesheets (at the end of them). index 1 in cssFile because first referenced stylesheet is a font. The animation makes the cactus go left*/
-  cssFile.insertRule('#cactus {animation:block 2s infinite linear;}', cssFile.cssRules.length) 
+  /* when the button is clicked, starts the game by inserting the only infinite animation into css stylesheets (at the end of them). The animation makes the cactus go left*/
+  cactus.classList.add("anim") //starts the animation of the cactus
   let score = 0
   
 
@@ -69,7 +68,8 @@ function startGame() {
     if (cactusLeft > 40 && cactusLeft < 90 && dinoTop >= 130) {
       const joeMama = new Audio('./assets/Joe Mama.mp3')
       joeMama.play()
-      cssFile.deleteRule(cssFile.cssRules.length - 1) //-1 because last time we appended, now we searched, stops the animation
+      cactus.classList.remove("anim")
+      //stops the animation
 
       //This makes the popup window work.
       modal.classList.add('active')
