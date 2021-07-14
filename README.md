@@ -2,4 +2,4 @@ Our team at Mickorp. Inc is very excited to announce a new innovation in the fie
 
 # This is the dino game, but instead of clicking, the dino jumps when you say Joe.
 Achieved with the Web Speech API, which unfortunately means it only works on Google Chrome. The game includes a score, a high score stored in local storage (which is perfect since you can't switch browsers), and events to stop and start the game. It's more or less a joke but let's be serious, who wouldn't want to play this :)
-PS: It is obvious, that a delay is going to be a part of this game, since the server response from Google will never be instant. Keep that in mind.
+PS: It is obvious, that a delay is going to be a part of this game, since the server response from Google will never be instant. Keep that in mind. Also, unlike what the teaser says, it's not actually offline, the Web Speech API recognizes your voice by sending packets to Google's servers.
