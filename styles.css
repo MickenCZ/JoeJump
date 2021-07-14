@@ -1,0 +1,181 @@
+* {
+  margin:0;
+  margin:0;
+  box-sizing: border-box;
+  font-family: 'Montserrat';
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+#header {
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#title {
+  font-size: 60px;
+  margin-bottom:20px;
+  font-family: 'Open Sans', sans-serif;
+  color:#223;
+}
+
+#button {
+  text-align: center;
+  display:block;
+  font-size: 30px!important;
+  margin-top: 40px;
+  margin-left:calc(50vw - 100px);
+  margin-left:calc(50vw - 100px);
+  width:200px;
+}
+
+#button {/*Looks scary but is actually bootstrap btn btn-primary*/
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+#button:hover {
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+    cursor: pointer;
+}
+
+.game {
+  width:600px; /*If you change this change cactus too*/
+  height:200px;
+  border:1px solid black;
+  margin:auto;
+}
+
+#dino {
+  width:50px;
+  height:50px;
+  background-image: url(assets/Dinosaur.png);
+  background-size: 50px 50px;
+  position: relative;
+  top:150px;
+  left:40px;
+}
+
+@keyframes jump {
+  0% {top:150px;}
+  30% {top:130px;}
+  50% {top:60px;}
+  80% {top:130px;}
+  100% {top:150px;}
+}
+
+.jump {
+  animation: jump 1s linear;
+}
+
+#cactus {
+  width:20px;
+  height:40px;
+  position:relative;
+  top:110px;
+  left:560px; /*Width of game - width of cactus - 20px this makes sure that the start position of the cactus is close to the right side*/ 
+  background-image: url(./assets/Cactus.png);
+  background-size: 20px 40px;
+}
+
+@keyframes block {
+  0% {left: 580px;}
+  100% {left:0px}
+}
+
+/*Dedicated to game over modal (popup) section */
+
+#modal {
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border:1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: white;
+  width:500px;
+  max-width: 80%;
+}
+
+#modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#modal-header {
+  padding:10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+#close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+#main-modal {
+  padding:10px 15px;
+}
+
+#main-modal div {
+  font-size: 25px;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#scores {
+  display: flex;
+  justify-content: center;
+}
+
+#score, #highScore {
+  font-weight: bold;
+  margin-top: 40px;
+  font-size: 30px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
