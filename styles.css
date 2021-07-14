@@ -81,7 +81,7 @@ body {
 
 @keyframes jump {
   0% {top:150px;}
-  30% {top:130px;}
+  20% {top:130px;}
   50% {top:60px;}
   80% {top:130px;}
   100% {top:150px;}
